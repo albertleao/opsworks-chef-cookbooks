@@ -4,4 +4,6 @@ node[:deploy].each do |application, deploy|
   end
   execute "chmod -R 0777 #{app_root}/vendor" do
   end
+  execute "chmod -R 0777 #{app_root}/storage" do
+  end
 end
