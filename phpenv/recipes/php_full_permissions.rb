@@ -6,4 +6,12 @@ node[:deploy].each do |application, deploy|
   end
   execute "chmod -R 0777 #{app_root}/storage" do
   end
+  execute "chmod -R 0777 #{app_root}/storage/logs" do
+  end
+  execute "chmod -R 0777 #{app_root}/storage/sessions" do
+  end
+  execute "chmod -R 0777 #{app_root}/storage/files" do
+  end
+  execute "chmod -R 0777 #{app_root}/storag/cache" do
+  end
 end
