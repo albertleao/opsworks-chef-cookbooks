@@ -7,10 +7,11 @@ when "debian","ubuntu"
   execute "remove_php_5" do
     user "root"
     command "apt-get purge 'php5*'"
-    action :run, 'execute[add_ppa]', :immediately
+    action :run
+    notifies :run, 'execute[add_ppa]', :immediately
   end
 
-  execute "remove_php_5" do
+  execute "add_ppa" do
     user "root"
     command "add-apt-repository ppa:ondrej/php"
     action :nothing
